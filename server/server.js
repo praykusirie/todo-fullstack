@@ -23,6 +23,7 @@ app.use(bodyParser.json())
 // connecting with our mongodb database
 mongoose.connect(process.env.DATABASE, options)
 
+
 //Listening when we are connected in our database and if not getting noticable error
 mongoose.connection.on('open', () => {
     try {
@@ -30,7 +31,7 @@ mongoose.connection.on('open', () => {
         app.listen(process.env.PORT, () => console.log(`Server is runnign at port ${process.env.PORT}`))
 
     } catch (error) {
-        console.log(error)
+        console.log(error.message)
     }
 })
 
