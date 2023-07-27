@@ -1,17 +1,14 @@
 import React, { createContext, useState } from 'react'
 import { Tooltip } from 'react-tooltip'
-import { deleteTask, filterCompletedTask } from '../slices/taskSlice'
 import { useDispatch } from 'react-redux'
 import { EditTask } from './EditTask'
 import { ShareTask } from './ShareTask'
-import { MutatingDots } from 'react-loader-spinner'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { getAllTasks } from '../slices/taskApiSlice'
 
 
 export const AddNewTask = ({ singleTask, tasks }) => {
-    const [checkedValue, setCheckedValue ] = useState([])
     const [openEdit, setEdit ] = useState(false)
     const [openEmail, setOpenEmail ] = useState(false)
     const [ id, setId ] = useState('')
