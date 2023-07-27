@@ -19,7 +19,7 @@ const userSchema = new Schema({
 
 
 //  this will be fired when we register,save,change or modify the password
-userSchemaSchema.pre('save', async function (next) {
+userSchema.pre('save', async function (next) {
 
     if(!this.isModified('password')) {
         return next()
@@ -32,7 +32,7 @@ userSchemaSchema.pre('save', async function (next) {
 })
 
 // verify password
-userSchemaSchema.methods.validatePassword = async function (password) {
+userSchema.methods.validatePassword = async function (password) {
     return await bcrypt.compare(password, this.password)
 }
 
