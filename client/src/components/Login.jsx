@@ -20,7 +20,7 @@ export const Login = () => {
             }
 
             const data = { username, password }
-            const response = await axios.post('http://localhost:3000/signin', data)
+            const response = await axios.post('/signin', data)
             toast.success(response.data.message)
             localStorage.setItem('user', JSON.stringify({
                 id: response.data.id,

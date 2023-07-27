@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { sendTaskEmail } from '../slices/taskSlice'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
@@ -16,7 +14,7 @@ export const ShareTask = ({ openEmail, setOpenEmail, _id }) => {
         e.preventDefault()
         try {
             const share = { _id, email: sharedEmail}
-            const response = await axios.post('http://localhost:3000/shareemail', share, {
+            const response = await axios.post('/shareemail', share, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

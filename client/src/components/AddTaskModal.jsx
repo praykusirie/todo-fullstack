@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addTask } from '../slices/taskSlice'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { getAllTasks } from '../slices/taskApiSlice'
@@ -24,7 +23,7 @@ export const AddTaskModal = ({ openModal, setModal }) => {
             }
             const status = 'Incomplete'
             const newTask = { task, time, status }
-            const response = await axios.post('http://localhost:3000/newtask', newTask, {
+            const response = await axios.post('/newtask', newTask, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

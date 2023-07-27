@@ -17,7 +17,7 @@ export const EditTask = ({ openEdit, setEdit, _id }) => {
         
         try {
             const updatedVal = { task: editedTask, time: editTime, _id: _id } 
-            const response = await axios.put('http://localhost:3000/updatetask',updatedVal, {
+            const response = await axios.put('/updatetask',updatedVal, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

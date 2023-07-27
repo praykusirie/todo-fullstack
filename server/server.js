@@ -24,8 +24,17 @@ app.use(express.json())
 
 app.use(taskRoute)
 
-// connecting with our mongodb database
 mongoose.connect(process.env.DATABASE, options)
+
+app.use(express.static(path.join(__dirname, "../client/dist")))
+
+app.get("*", function (_, res) {
+    res.sendFile(
+        path.join(__dirname, "../client/dist/index.html")
+    )
+})
+
+// connecting with our mongodb database
 
 
 //Listening when we are connected in our database and if not getting noticable error

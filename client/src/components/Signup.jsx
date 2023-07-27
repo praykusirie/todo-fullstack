@@ -21,7 +21,7 @@ export const Signup = () => {
             }
 
             const data = { username, password, fullname }
-            const response = await axios.post('http://localhost:3000/signup', data)
+            const response = await axios.post('/signup', data)
             toast.success(response.data.message)
             localStorage.setItem('user', JSON.stringify({
                 id: response.data.id,

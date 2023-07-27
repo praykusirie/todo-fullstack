@@ -24,7 +24,7 @@ export const AddNewTask = ({ singleTask, tasks }) => {
 
     const deleteSingleTask = async (_id) => {
       try {
-        const response = await axios.post('http://localhost:3000/deletetask', { _id }, {
+        const response = await axios.post('/deletetask', { _id }, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -47,7 +47,7 @@ export const AddNewTask = ({ singleTask, tasks }) => {
           try {
               const currentStatus = 'Completed'
               const updatedStatus = { _id, status: currentStatus}
-              const response = await axios.put('http://localhost:3000/updatestatus', updatedStatus, {
+              const response = await axios.put('/updatestatus', updatedStatus, {
                 headers: {
                   'Authorization': `Bearer ${token}`
                 }

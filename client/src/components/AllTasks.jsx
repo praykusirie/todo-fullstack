@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch, useSelector } from 'react-redux'
 import { AddNewTask } from './AddNewTask'
-import { ToastContainer } from 'react-toastify';
 import { MutatingDots } from 'react-loader-spinner'
 import { AddTaskModal } from './AddTaskModal';
 import { getAllTasks } from '../slices/taskApiSlice';
-import { Tooltip } from 'react-tooltip';
 import { useNavigate } from 'react-router-dom';
 
 
